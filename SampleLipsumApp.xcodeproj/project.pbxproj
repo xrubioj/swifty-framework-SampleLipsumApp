@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		8D34BAD9617BDB5C24E463A3 /* Pods_SampleLipsumApp.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8195A3D26BE97707A5F053CC /* Pods_SampleLipsumApp.framework */; };
 		A9C7DB8B2018B458009D1682 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9C7DB8A2018B458009D1682 /* AppDelegate.swift */; };
 		A9C7DB8D2018B458009D1682 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9C7DB8C2018B458009D1682 /* ViewController.swift */; };
 		A9C7DB902018B458009D1682 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A9C7DB8E2018B458009D1682 /* Main.storyboard */; };
@@ -15,6 +16,9 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		6A65B274D20BA77016609CDA /* Pods-SampleLipsumApp.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SampleLipsumApp.release.xcconfig"; path = "Pods/Target Support Files/Pods-SampleLipsumApp/Pods-SampleLipsumApp.release.xcconfig"; sourceTree = "<group>"; };
+		8195A3D26BE97707A5F053CC /* Pods_SampleLipsumApp.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_SampleLipsumApp.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		995873758B5C02497C426E3E /* Pods-SampleLipsumApp.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SampleLipsumApp.debug.xcconfig"; path = "Pods/Target Support Files/Pods-SampleLipsumApp/Pods-SampleLipsumApp.debug.xcconfig"; sourceTree = "<group>"; };
 		A9C7DB872018B458009D1682 /* SampleLipsumApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SampleLipsumApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A9C7DB8A2018B458009D1682 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		A9C7DB8C2018B458009D1682 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -29,17 +33,37 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8D34BAD9617BDB5C24E463A3 /* Pods_SampleLipsumApp.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		237326516132175065F7DD2B /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				8195A3D26BE97707A5F053CC /* Pods_SampleLipsumApp.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		3BD9D685F280955C0F851A84 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				995873758B5C02497C426E3E /* Pods-SampleLipsumApp.debug.xcconfig */,
+				6A65B274D20BA77016609CDA /* Pods-SampleLipsumApp.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
 		A9C7DB7E2018B458009D1682 = {
 			isa = PBXGroup;
 			children = (
 				A9C7DB892018B458009D1682 /* SampleLipsumApp */,
 				A9C7DB882018B458009D1682 /* Products */,
+				3BD9D685F280955C0F851A84 /* Pods */,
+				237326516132175065F7DD2B /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -71,9 +95,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = A9C7DB992018B458009D1682 /* Build configuration list for PBXNativeTarget "SampleLipsumApp" */;
 			buildPhases = (
+				3FCBFC468AC4ED5E04274409 /* [CP] Check Pods Manifest.lock */,
 				A9C7DB832018B458009D1682 /* Sources */,
 				A9C7DB842018B458009D1682 /* Frameworks */,
 				A9C7DB852018B458009D1682 /* Resources */,
+				DE9756566AF54FF63987D6E1 /* [CP] Embed Pods Frameworks */,
+				EAFC748AC37475D99E1D5552 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -130,6 +157,60 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		3FCBFC468AC4ED5E04274409 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-SampleLipsumApp-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		DE9756566AF54FF63987D6E1 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${SRCROOT}/Pods/Target Support Files/Pods-SampleLipsumApp/Pods-SampleLipsumApp-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/Lipsum/Lipsum.framework",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Lipsum.framework",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-SampleLipsumApp/Pods-SampleLipsumApp-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		EAFC748AC37475D99E1D5552 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-SampleLipsumApp/Pods-SampleLipsumApp-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		A9C7DB832018B458009D1682 /* Sources */ = {
@@ -272,6 +353,7 @@
 		};
 		A9C7DB9A2018B458009D1682 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 995873758B5C02497C426E3E /* Pods-SampleLipsumApp.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
@@ -286,6 +368,7 @@
 		};
 		A9C7DB9B2018B458009D1682 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 6A65B274D20BA77016609CDA /* Pods-SampleLipsumApp.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;

@@ -1,0 +1,16 @@
+PODS:
+  - Lipsum (0.0.1)
+
+DEPENDENCIES:
+  - Lipsum (from `../Lipsum`)
+
+EXTERNAL SOURCES:
+  Lipsum:
+    :path: ../Lipsum
+
+SPEC CHECKSUMS:
+  Lipsum: bd3ba422a11a8b827d56e30ef7f95ce4451a8961
+
+PODFILE CHECKSUM: 3aa4eee8f6698e32848689a2af5d46007c4ebf26
+
+COCOAPODS: 1.3.1
